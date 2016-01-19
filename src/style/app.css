@@ -51,9 +51,9 @@ input[type="text"], input[type="number"] {
 /* } */
 /* ::-webkit-input-placeholder { color: #777; } */
 
-a { color: #67bfa7; text-decoration: none; transition: all 0.2s; }
+a { color: #67bfa7; text-decoration: none; transition: all 0.2s; -webkit-transition: all 0.2s; }
 button { cursor: pointer; border: none; padding: 0; background: transparent; }
-input { color: #67bfa7; transition: all 0.2s; }
+input { color: #67bfa7; transition: all 0.2s; -webkit-transition: all 0.2s; }
 input:focus { color: #f3cf5b !important; }
 
 button:hover,
@@ -97,16 +97,18 @@ a:hover { color: #d2f5ec; }
   position: absolute;
   overflow-y: scroll;
   -webkit-app-region: no-drag;
+  -webkit-transform: translateX(0);
+  -webkit-transition: transform 0.19s ease-in-out;
   transform: translateX(0);
   transition: transform 0.19s ease-in-out;
 }
 body.no-projects .task-list-container,
-body.no-projects .project-list-container { transition: none; }
+body.no-projects .project-list-container { transition: none; -webkit-transform: none; }
 
 body.no-projects .task-list-container,
 body.no-projects .project-list-container,
 body.projects .task-list-container,
-body.projects .project-list-container { transform: translateX(100%); }
+body.projects .project-list-container { -webkit-transform: translateX(100%); transform: translateX(100%); }
 
 .project-list-container { left: -100%; }
 
